@@ -4,6 +4,8 @@ USAGE
 use Benchmark qw/:all/;
 use Benchmark::Chart qw/plotthese/;
 
+# creates hash of functions as a input to Benchmark::timethese
+# it benchmarks two different ways of exponentiation
 sub createSubs {
     my $x = shift;
     return {
@@ -14,11 +16,13 @@ sub createSubs {
 
 # functional interface
 my $result = timethese( 20000000, createSubs( 666666666 ), 'none' );
+
+# output of Benchmark::timethese is the main input for Benchmark::Chart::plotthese
 plotthese(
-    options => {
-        title  => "Single benchmark",
-        output => "benchmark1.png",
-    },  
+    options => {                            # same options as in Chart::Gnuplot
+        title  => "Single benchmark",       # title
+        output => "benchmark1.png",         # output file
+    },
     data => $result
 );
 ```
@@ -26,19 +30,6 @@ plotthese(
 ![benchmark1](http://www.dohnalek.name/perl/Benchmark-Chart/benchmark1.png "benchmark1")
 
 ```perl
-# or if you have more data
-my %inputs = ( 
-    '9999999'               => 9999999,
-    '88888888888'           => 88888888888,
-    '777777777777777777777' => 777777777777777777777,
-);
-
-my @results = (); 
-
-for my $k ( keys %inputs ) { 
-    push @results, { $k => timethese( 20000000, createSubs( $inputs{$k} ), 'none' ) };
-}
-
 # or if you have more data
 my %inputs = ( 
     '9999999'               => 9999999,
