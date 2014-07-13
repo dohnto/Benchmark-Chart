@@ -1,5 +1,6 @@
 USAGE
 
+```perl
     use Benchmark qw/:all/;
     use Benchmark::Chart qw/plotthese/;
 
@@ -20,9 +21,11 @@ USAGE
         },  
         data => $result
     );
+```
 
 ![benchmark1](http://www.dohnalek.name/perl/Benchmark-Chart/benchmark1.png "benchmark1")
 
+```perl
     # or if you have more data
     my %inputs = ( 
         '9999999'               => 9999999,
@@ -56,9 +59,11 @@ USAGE
         },  
         data => \@results
     );
+```
 
 ![benchmark2](http://www.dohnalek.name/perl/Benchmark-Chart/benchmark2.png "benchmark2")
 
+```perl
     plotthese(
         options => {
             title  => "Uniform benchmark with more data",
@@ -67,6 +72,7 @@ USAGE
         data => \@results,
         uniform => 1
     );
+```
 
 ![benchmark3](http://www.dohnalek.name/perl/Benchmark-Chart/benchmark3.png "benchmark3")
 
