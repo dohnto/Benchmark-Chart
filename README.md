@@ -1,4 +1,5 @@
 USAGE
+=====
 
 ```perl
 use Benchmark qw/:all/;
@@ -68,6 +69,7 @@ plotthese(
 ![benchmark3](http://www.dohnalek.name/perl/Benchmark-Chart/benchmark3.png "benchmark3")
 
 INSTALLATION
+============
 
 To install this module, run the following commands:
 
@@ -77,6 +79,7 @@ To install this module, run the following commands:
 	make install
 
 SUPPORT AND DOCUMENTATION
+=========================
 
 After installing, you can find documentation for this module with the
 perldoc command.
@@ -90,6 +93,7 @@ You can also look for information at:
 
 
 LICENSE AND COPYRIGHT
+=====================
 
 DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
 Version 2, December 2004
